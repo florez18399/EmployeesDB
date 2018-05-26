@@ -2,13 +2,28 @@ package models;
 
 import java.util.Calendar;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 public class Employee {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "Employees")
+	@Column(name = "id_employee")
 	private int idEmployee;
+	@Column(name = "first_name")
 	private String firstName;
+	@Column(name = "last_name")
 	private String lastName;
+	@Column(name = "phone_number")
 	private String phoneNumber;
+	@Column(name = "hired_date")
 	private Calendar hiredDate;
+	@Column(name = "current_salary")
 	private int currentSalary;
+	@ManyToOne
 	private Department department;
 
 	public Employee() {

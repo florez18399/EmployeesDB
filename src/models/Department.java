@@ -1,16 +1,26 @@
 package models;
 
+import java.util.HashSet;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Department {
+	
 	private int idDepartment;
 	private String nameDepartment;
 	private String managerNumber;
 	private String locationName;
+	@OneToMany
+	private HashSet<Employee> employees;
 
 	public Department(int idDepartment, String nameDepartment, String managerNumber, String locationName) {
 		this.idDepartment = idDepartment;
 		this.nameDepartment = nameDepartment;
 		this.managerNumber = managerNumber;
 		this.locationName = locationName;
+		employees = new HashSet<>();
 	}
 
 	public Department() {
