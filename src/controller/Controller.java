@@ -37,8 +37,8 @@ public class Controller {
 		// myDB.saveDepartment(department);
 		// myDB.saveEmployee(employee);
 		// department.showEmployees();
-		Department department = new Department("Gerencia", "3102500929", "Sogamoso");
-		Employee employee = new Employee("Gustavo ", "Flórez", "31456236",
+		Department department = new Department("Administración 2", "3102500929", "Sogamoso");
+		Employee employee = new Employee("Nicolás  ", "Mendez", "514648",
 				new GregorianCalendar(2000, Calendar.JULY, 20), 15000, department);
 		department.getEmployees().add(employee);
 		myDB.saveDepartment(department);

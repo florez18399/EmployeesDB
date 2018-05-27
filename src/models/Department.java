@@ -11,22 +11,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
-//@Entity
-// @Table(name = "Departments")
+@Entity
+@Table(name = "Departments")
 public class Department {
 
-	// @Id
-	// @GeneratedValue(generator = "generator_id_dep")
-	// @GenericGenerator(name = "generator_id_dep", strategy = "increment")
-	// @Column(name = "id_department")
+	@Id
+	@GeneratedValue(generator = "generator_id_dep")
+	@GenericGenerator(name = "generator_id_dep", strategy = "increment")
+	@Column(name = "id_department")
 	private int idDepartment;
-	// @Column(name = "name_department")
+	@Column(name = "name_department")
 	private String nameDepartment;
-	// @Column(name = "manager_number")
+	@Column(name = "manager_number")
 	private String managerNumber;
-	// @Column(name = "location_name")
+	@Column(name = "location_name")
 	private String locationName;
-	// @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
 	private Set<Employee> employees;
 
 	public Department(String nameDepartment, String managerNumber, String locationName) {
