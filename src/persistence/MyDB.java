@@ -1,10 +1,12 @@
 package persistence;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
-
+import org.hibernate.query.Query;
 import models.Department;
 import models.Employee;
 import models.Project;
@@ -18,6 +20,11 @@ public class MyDB {
 	public MyDB() {
 		session = new Configuration().configure("persistence/mydb.cfg.xml").buildSessionFactory().openSession();
 		transaction = session.beginTransaction();
+	}
+
+	public List<Department> getDepartmentsSaved() {
+		Query<Department> query = session.createQuery("from departments");
+		return query.list();
 	}
 
 	public void saveDepartment(Department department) {
@@ -44,4 +51,5 @@ public class MyDB {
 	public void saveProjectAllocation(ProjectAllocation projectAllocation) {
 		session.save(projectAllocation);
 	}
+
 }

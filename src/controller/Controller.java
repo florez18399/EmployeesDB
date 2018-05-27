@@ -37,22 +37,26 @@ public class Controller {
 		// myDB.saveDepartment(department);
 		// myDB.saveEmployee(employee);
 		// department.showEmployees();
-		Department department = new Department("Administración 2", "3102500929", "Sogamoso");
-		Employee employee = new Employee("Nicolás  ", "Mendez", "514648",
-				new GregorianCalendar(2000, Calendar.JULY, 20), 15000, department);
+		Department department = new Department("Administración 4", "3102500929", "Sogamoso");
+		Employee employee = new Employee("Juliana ", "Serna", "514648", new GregorianCalendar(2000, Calendar.JULY, 20),
+				8552, department);
 		department.getEmployees().add(employee);
 		myDB.saveDepartment(department);
-
-		// Project project = new Project("Reforma de inventarios");
-		// myDB.saveProject(project);
 		//
-		// ProjectAllocation allocation = new ProjectAllocation(
-		// new ProjectAllocationPK(project.getIdProject(), employee.getIdEmployee()),
-		// new GregorianCalendar(2015, Calendar.JULY, 26), new GregorianCalendar(2018,
-		// Calendar.MARCH, 18));
-		// myDB.saveProjectAllocation(allocation);
-		// Project project = new Project("El juego del proyect :V");
-		// myDB.saveProject(project);
+		// // Project project = new Project("Reforma de inventarios");
+		// // myDB.saveProject(project);
+		// //
+		// // ProjectAllocation allocation = new ProjectAllocation(
+		// // new ProjectAllocationPK(project.getIdProject(), employee.getIdEmployee()),
+		// // new GregorianCalendar(2015, Calendar.JULY, 26), new
+		// GregorianCalendar(2018,
+		// // Calendar.MARCH, 18));
+		// // myDB.saveProjectAllocation(allocation);
+		// // Project project = new Project("El juego del proyect :V");
+		// // myDB.saveProject(project);
+		for (Department department2 : myDB.getDepartmentsSaved()) {
+			System.out.println(department2.getIdDepartment() + " " + department2.getNameDepartment());
+		}
 		myDB.keepChanges();
 	}
 

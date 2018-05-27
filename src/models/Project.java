@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "Projects")
+@Table(name = "projects")
 public class Project {
 	@Id
 	@GeneratedValue(generator = "generator_id_pro")

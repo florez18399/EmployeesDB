@@ -8,12 +8,13 @@
 		<property name="hibernate.connection.url">jdbc:mysql://localhost/mydb</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
 		<property name="hibernate.show_sql">true</property>
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<mapping class="models.Department" package="models" />
-		<mapping class="models.Employee" package="models" />
-		<!-- <mapping class="models.Project" package="models" resource="/persitence.Project.hbm.xml" 
-			<mapping class="models.Project" package="models" /> <mapping class="models.ProjectAllocation" 
-			package="models" resource="/persistence.ProjectAllocation.hbm.xml" /> /> -->
+
+		<mapping class="models.Department" package="models"
+			resource="/models.Department.hbm.xml" />
+
+		<mapping class="models.Employee" package="models"
+			resource="/models.Employee.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

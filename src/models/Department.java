@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "Departments")
+@Table(name = "departments")
 public class Department {
 
 	@Id
