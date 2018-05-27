@@ -3,13 +3,16 @@ package models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Table(name = "Projects")
 public class Project {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "Projects")
+	@GeneratedValue(generator = "generator_id_pro")
+	@GenericGenerator(name = "generator_id_pro", strategy = "increment")
 	@Column(name = "id_project")
 	private int idProject;
 	@Column(name = "name_project")
@@ -20,6 +23,10 @@ public class Project {
 
 	public Project(int idProject, String nameProject) {
 		this.idProject = idProject;
+		this.nameProject = nameProject;
+	}
+
+	public Project(String nameProject) {
 		this.nameProject = nameProject;
 	}
 

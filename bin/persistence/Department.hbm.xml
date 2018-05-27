@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="models.Department" table="departments" catalog="mydb">
+		<id name="idDepartment" type="java.lang.Integer">
+			<column name="id_department" />
+			<generator class="increment" />
+		</id>
+		<property name="nameDepartment" type="string">
+			<column name="name_department" length="30" not-null="true"></column>
+		</property>
+		<property name="managerNumber" type="string">
+			<column name="manager_number" length="30" not-null="true"></column>
+		</property>
+		<property name="locationName" type="string">
+			<column name="location_name" length="30"></column>
+		</property>
+		<set name="employees" cascade="all" inverse="true">
+			<key>
+				<column name="idDepartment" />
+			</key>
+			<one-to-many class="Employee" />
+		</set>
+	</class>
+</hibernate-mapping>

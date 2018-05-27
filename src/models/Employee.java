@@ -1,32 +1,52 @@
 package models;
 
 import java.util.Calendar;
-
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.hibernate.annotations.GenericGenerator;
 
+//
+//@Entity
+// @Table(name = "Employees")
 public class Employee {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "Employees")
-	@Column(name = "id_employee")
+	// @Id
+	// @Column(name = "id_employee")
+	// @GeneratedValue(generator = "generator_id_emp")
+	// @GenericGenerator(name = "generator_id_emp", strategy = "increment")
 	private int idEmployee;
-	@Column(name = "first_name")
+	// @Column(name = "first_name")
 	private String firstName;
-	@Column(name = "last_name")
+	// @Column(name = "last_name")
 	private String lastName;
-	@Column(name = "phone_number")
+	// @Column(name = "phone_number")
 	private String phoneNumber;
-	@Column(name = "hired_date")
+	// @Column(name = "hired_date")
+	// @Temporal(TemporalType.DATE)
 	private Calendar hiredDate;
-	@Column(name = "current_salary")
+	// @Column(name = "current_salary")
 	private int currentSalary;
-	@ManyToOne
+	// @ManyToOne
+	// @JoinColumn(name = "id_department")
 	private Department department;
 
 	public Employee() {
+	}
+
+	public Employee(String firstName, String lastName, String phoneNumber, Calendar hiredDate, int currentSalary,
+			Department department) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.hiredDate = hiredDate;
+		this.currentSalary = currentSalary;
+		this.department = department;
 	}
 
 	public int getIdEmployee() {

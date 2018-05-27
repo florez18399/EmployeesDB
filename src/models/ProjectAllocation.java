@@ -1,15 +1,16 @@
 package models;
 
 import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Table;
 
 //Entidad débil
 @Entity
+@Table(name = "projects_allocation")
 public class ProjectAllocation {
 	@EmbeddedId
 	private ProjectAllocationPK pk;

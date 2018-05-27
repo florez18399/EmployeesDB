@@ -1,10 +1,16 @@
 package models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class ProjectAllocationPK {
+public class ProjectAllocationPK implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Column(name = "id_project", nullable = false)
 	private int idProject;
 	@Column(name = "id_employee", nullable = false)

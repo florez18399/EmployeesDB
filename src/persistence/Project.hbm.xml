@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="models.Project" table="projects" catalog="mydb">
+		<id name="idProject" type="int">
+			<column name="id_project" />
+			<generator class="increment" />
+		</id>
+		<property name="nameProject" type="string">
+			<column name="name_project" length="45" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

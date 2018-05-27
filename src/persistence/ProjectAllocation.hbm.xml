@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="models.ProjectAllocation" table="projects_allocation"
+		catalog="mydb">
+		<id name="pk" type="models.ProjectAllocationPK">
+		</id>
+		<property name="empStartDate" type="java.util.Calendar">
+			<column name="emp_start_date" length="19" not-null="true" />
+		</property>
+		<property name="empEndDate" type="java.util.Calendar">
+			<column name="emp_end_date" length="19" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

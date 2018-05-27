@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="models.Employee" table="employees" catalog="mydb">
+		<id name="idEmployee" type="int">
+			<column name="id_employee" />
+			<generator class="increment" />
+		</id>
+		<property name="firstName" type="string">
+			<column name="first_name" length="30" not-null="true" />
+		</property>
+		<property name="lastName" type="string">
+			<column name="last_name" length="30" not-null="true" />
+		</property>
+		<property name="phoneNumber" type="string">
+			<column name="phone_number" length="45" not-null="true" />
+		</property>
+		<property name="hiredDate" type="java.util.Calendar">
+			<column name="hired_date" length="19" not-null="true" />
+		</property>
+		<property name="currentSalary" type="int">
+			<column name="current_salary" not-null="true" />
+		</property>
+		<many-to-one name="department">
+			<column name="id_department" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>
